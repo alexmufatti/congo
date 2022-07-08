@@ -9,7 +9,31 @@
       </h1>
       <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
-      </div>
+        {{ if .Params.activitydata }}
+          <div class="mt-6 mb-12 flex flex-row flex-wrap items-center print:hidden">
+            {{ if and .Params.activitydata .Params.activitydata.pace }}
+              <div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+               Pace: {{ .Params.activitydata.pace }}
+              </div>
+            {{ end }}
+            {{ if and .Params.activitydata .Params.activitydata.elevation }}
+              <span class="px-2 text-primary-500">·</span><div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+                Elevation: {{ .Params.activitydata.elevation }}
+              </div>
+            {{ end }}
+            {{ if and .Params.activitydata .Params.activitydata.duration }}
+              <span class="px-2 text-primary-500">·</span><div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+                Duration: {{ .Params.activitydata.duration }}
+              </div>
+            {{ end }}
+            {{ if and .Params.activitydata .Params.activitydata.distance }}
+              <span class="px-2 text-primary-500">·</span><div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+                Distance {{ .Params.activitydata.distance }}
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+    </div>
     </header>
     <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
       {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
