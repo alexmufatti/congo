@@ -12,11 +12,12 @@ autoSwitchAppearance = true
 enableSearch = false
 enableCodeCopy = false
 
-# mainSections = ["section1", "section2"]
 # robots = ""
 
 [header]
-  layout = "basic" # valid options: basic, hamburger, custom
+  layout = "basic" # valid options: basic, hamburger, hybrid, custom
+  # logo = "img/logo.jpg"
+  showTitle = true
 
 [footer]
   showCopyright = true
@@ -27,6 +28,7 @@ enableCodeCopy = false
 [homepage]
   layout = "page" # valid options: page, profile, custom
   showRecent = false
+  recentLimit = 5
 
 [article]
   showDate = true
@@ -45,13 +47,15 @@ enableCodeCopy = false
   showTaxonomies = false
   showWordCount = false
   showComments = false
-  # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
+  # sharingLinks = ["facebook", "twitter", "mastodon", "pinterest", "reddit", "linkedin", "email"]
 
 [list]
   showBreadcrumbs = false
   showSummary = false
   showTableOfContents = false
+  showTaxonomies = false
   groupByYear = true
+  paginationWidth = 1
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
