@@ -9,7 +9,7 @@ tags: ["Icons", "Beispiele", "Shortcodes"]
 showDateUpdated: true
 ---
 
-Congo hat integrierte Unterstützung für eine Reihe von Icons von [FontAwesome 6](https://fontawesome.com/icons). Diese können entweder über den Partial [icon]({{< ref path="docs/partials#icon" lang="en" >}}) oder Shortcode  [icon]({{< ref path="docs/shortcodes#icon" lang="en">}}) in deine Website eingebunden werden.
+Congo hat integrierte Unterstützung für eine Reihe von Icons von [FontAwesome 6](https://fontawesome.com/icons). Diese können entweder über den Partial [icon]({{< ref path="docs/partials#icon" lang="en" >}}) oder Shortcode [icon]({{< ref path="docs/shortcodes#icon" lang="en">}}) in deine Website eingebunden werden.
 
 Darüber hinaus werden auch benutzerdefinierte Icons vollständig unterstützt. Du kannst deine eigenen SVG-Icon-Assets im Ordner `assets/icons/` im Stammverzeichnis deines Projekts ablegen. Alle Icons in diesem Verzeichnis stehen dann im gesamten Theme zur Verfügung.
 
@@ -27,6 +27,7 @@ Die vollständige Liste der integrierten Icons und ihre entsprechenden Namen fin
 | chevron-up           | {{< icon chevron-up >}}           |
 | circle-info          | {{< icon circle-info >}}          |
 | codepen              | {{< icon codepen >}}              |
+| coffee               | {{< icon coffee >}}               |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
 | dribbble             | {{< icon dribbble >}}             |
@@ -70,6 +71,7 @@ Die vollständige Liste der integrierten Icons und ihre entsprechenden Namen fin
 | sun                  | {{< icon sun >}}                  |
 | tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |
+| threads              | {{< icon threads >}}              |
 | tiktok               | {{< icon tiktok >}}               |
 | translate            | {{< icon translate >}}            |
 | triangle-exclamation | {{< icon triangle-exclamation >}} |
@@ -77,5 +79,6 @@ Die vollständige Liste der integrierten Icons und ihre entsprechenden Namen fin
 | twitch               | {{< icon twitch >}}               |
 | twitter              | {{< icon twitter >}}              |
 | whatsapp             | {{< icon whatsapp >}}             |
+| x-twitter            | {{< icon x-twitter >}}            |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |

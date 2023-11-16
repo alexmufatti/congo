@@ -27,6 +27,7 @@ La lista completa de íconos incorporados y sus nombres correspondientes se pued
 | chevron-up           | {{< icon chevron-up >}}           |
 | circle-info          | {{< icon circle-info >}}          |
 | codepen              | {{< icon codepen >}}              |
+| coffee               | {{< icon coffee >}}               |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
 | dribbble             | {{< icon dribbble >}}             |
@@ -70,6 +71,7 @@ La lista completa de íconos incorporados y sus nombres correspondientes se pued
 | sun                  | {{< icon sun >}}                  |
 | tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |
+| threads              | {{< icon threads >}}              |
 | tiktok               | {{< icon tiktok >}}               |
 | translate            | {{< icon translate >}}            |
 | triangle-exclamation | {{< icon triangle-exclamation >}} |
@@ -77,5 +79,6 @@ La lista completa de íconos incorporados y sus nombres correspondientes se pued
 | twitch               | {{< icon twitch >}}               |
 | twitter              | {{< icon twitter >}}              |
 | whatsapp             | {{< icon whatsapp >}}             |
+| x-twitter            | {{< icon x-twitter >}}            |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
