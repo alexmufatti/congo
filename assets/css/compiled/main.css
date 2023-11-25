@@ -1902,6 +1902,10 @@ body:has(#menu-controller:checked) {
   margin-right: 0.5rem;
 }
 
+.mr-6 {
+  margin-right: 2.5rem;
+}
+
 .ms-1 {
   margin-inline-start: 0.25rem;
 }
@@ -2020,6 +2024,10 @@ body:has(#menu-controller:checked) {
 
 .w-full {
   width: 100%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-screen {
@@ -2982,6 +2990,10 @@ body:has(#menu-controller:checked) {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 
   .sm\:w-40 {
