@@ -53,9 +53,9 @@
             sm:max-w-[10rem]" src="{{ .RelPermalink }}"
           {{ else }}
             class="w-full rounded-md" srcset="
-            {{- (.Fill "160x120 smart").RelPermalink }}
-            160w, {{- (.Fill "320x240 smart").RelPermalink }} 2x"
-            src="{{ (.Fill "160x120 smart").RelPermalink }}"
+            {{- (.Fill "280x210 smart").RelPermalink }}
+            280w, {{- (.Fill "560x420 smart").RelPermalink }} 2x"
+            src="{{ (.Fill "280x210 smart").RelPermalink }}"
             width="160"
             height="120"
           {{ end }}
@@ -66,16 +66,16 @@
       </a>
     </div>
   {{- end }}
-  <div class="ml-2 mr-6 flex-grow flex flex-col">
+  <div class="ml-2 mr-6 flex-grow flex flex-col mt-1">
     <div class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
       {{ partial "article-meta.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="prose py-1 dark:prose-invert flex-grow">
+      <div class="prose py-1 dark:prose-invert flex-grow mt-1">
         {{ .Summary | emojify }}
       </div>
     {{ end }}
-    <hr class="border-primary-400" />
+    <hr class="border-primary-400 mt-6" />
   </div>
 
 </article>
