@@ -32,14 +32,18 @@
             {{ .Key }}
           </h2>
           <hr class="border-dotted w-36 border-neutral-400" />
+      <div class="flex flex-wrap">
           {{ range .Pages }}
             {{ partial "article-link.html" . }}
           {{ end }}
+      </div>
         {{ end }}
       {{ else }}
+      <div class="flex flex-wrap">
         {{ range (.Paginate .Pages).Pages }}
           {{ partial "article-link.html" . }}
         {{ end }}
+        </div>
       {{ end }}
     </section>
     {{ partial "pagination.html" . }}

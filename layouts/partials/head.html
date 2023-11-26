@@ -2,6 +2,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   {{/* Title */}}
   {{ if .IsHome -}}
     <title>{{ .Site.Title | emojify }}</title>
@@ -10,6 +11,9 @@
     <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
     <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
   {{- end }}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" }}
@@ -53,41 +57,22 @@
   {{ end }}
   {{ if $assets.Get "js" }}
     {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint $algorithm }}
-    <script
-      defer
-      type="text/javascript"
-      id="script-bundle"
-      src="{{ $bundleJS.RelPermalink }}"
-      integrity="{{ $bundleJS.Data.Integrity }}"
-      data-copy="{{ i18n "code.copy" }}"
-      data-copied="{{ i18n "code.copied" }}"
-    ></script>
+    <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}" integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied" }}"></script>
   {{ end }}
   {{/* Metadata */}}
-  <meta
-    name="description"
-    content="{{ with .Description }}
-      {{ . }}
-    {{ else }}
-      {{ if .IsPage }}
-        {{ .Summary }}
-      {{ else }}
-        {{ with .Site.Params.description }}{{ . }}{{ end }}
-      {{ end }}
-    {{ end }}"
-  />
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
   {{ with union .Site.Params.keywords .Params.keywords -}}
-    <meta name="keywords" content="{{ delimit . `, ` }}" />
+  <meta name="keywords" content="{{ delimit . `, ` }}" />
   {{- end }}
   {{ with .Site.Params.robots }}
-    <meta name="robots" content="{{ . }}" />
+  <meta name="robots" content="{{ . }}" />
   {{ end }}
   {{ with .Params.robots }}
-    <meta name="robots" content="{{ . }}" />
+  <meta name="robots" content="{{ . }}" />
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
   {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) | safeHTML }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) | safeHTML }}
   {{ end -}}
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}

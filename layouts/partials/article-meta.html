@@ -27,6 +27,17 @@
   {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
     {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
   {{ end }}
+<div class="trainings">
+      {{ $trainingTypes := .Params.trainingTypes }}
+      {{ $trainingFeelings := .Params.trainingFeelings }}
+      {{range $index, $element := $trainingTypes}}
+        <div class="training">
+          <span>{{$element}}</span>
+          <span>{{ index $trainingFeelings $index }}</span>
+        </div>
+      {{end}}
+
+</div>
 
   {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
     {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
