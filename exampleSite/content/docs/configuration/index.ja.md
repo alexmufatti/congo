@@ -53,6 +53,7 @@ Congoは現在、以下の言語に対応しています:
 | :gb: **English (default)**              | `en`    |
 | :egypt: Arabic                          | `ar`    |
 | :bangladesh: Bengali                    | `bn`    |
+| :bulgaria: Bulgarian                    | `bg`    |
 | :cn: Chinese - Simplified (China)       | `zh-cn` |
 | :taiwan: Chinese - Traditional (Taiwan) | `zh-tw` |
 | :flag-cz: Czech                         | `cs`    |
@@ -73,6 +74,7 @@ Congoは現在、以下の言語に対応しています:
 | :slovakia: Slovak                       | `sk`    |
 | :es: Spanish (Spain)                    | `es`    |
 | :tr: Turkish                            | `tr`    |
+| :ukraine: Ukrainian                     | `uk`    |
 
 翻訳文字列を含むカスタムファイルを `i18n/[code].yaml` に作成することでデフォルトの翻訳をオーバーライドできます。このメソッドを使って新しい言語を追加することもできます。新しい翻訳をコミュニティと共有したい場合、[Pull Request](https://github.com/jpanther/congo/pulls)を作ってください。
 
@@ -167,7 +169,6 @@ Congoはテーマの機能を制御する多数の設定パラメーターを提
 |`sitemap.excludedKinds`|`["taxonomy", "term"]`|生成される `/sitemap.xml` から除外されるべきコンテンツの種類。許容される値については[Hugo docs](https://gohugo.io/templates/section-templates/#page-kinds)を参照してください。|
 |`taxonomy.showTermCount`|`true`|TaxonomiesのリストにTermごとの記事数を表示するかどうか。|
 |`fathomAnalytics.site`|_Not set_|Fathom Analyticsによって生成されたウェブサイトのサイトコード。詳細は[アナリティクス]({{< ref "partials#アナリティクス" >}})を参照してください。|
-|`fathomAnalytics.domain`|_Not set_|Fathom Analyticsでカスタムドメインを使用している場合、カスタムドメインから`script.js`を提供するためにここに指定します。|
 |`verification.google`|_Not set_|サイトのメタデータに含めるGoogleが提供するサイト検証文字列。|
 |`verification.bing`|_Not set_|サイトのメタデータに含めるBingが提供するサイト検証文字列。|
 |`verification.pinterest`|_Not set_|サイトのメタデータに含めるPinterestが提供するサイト検証文字列。|
