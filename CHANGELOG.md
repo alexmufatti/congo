@@ -8,7 +8,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-- Warning when building if links to markdown files cannot be resolved ([#691](https://github.com/jpanther/congo/pull/691))
+- Quicklink support ([#646](https://github.com/jpanther/congo/pull/646))
+- Automatic support for WebP images ([#693](https://github.com/jpanther/congo/pull/693))
+- Warning when building if links to Markdown files cannot be resolved ([#691](https://github.com/jpanther/congo/pull/691))
+- Ability to share articles to Telegram and Line ([#719](https://github.com/jpanther/congo/pull/719))
+- New icon for `line` ([#719](https://github.com/jpanther/congo/pull/719))
+
+### Changed
+
+- ⚠️ Hugo extended version is now required when building sites
+- ⚠️ Author params block in language configuration has been moved to `params.author` ([#704](https://github.com/jpanther/congo/pull/704))
+- Refactored image logic into a new `picture.html` partial ([#693](https://github.com/jpanther/congo/pull/693))
+
+### Fixed
+
+- Hamburger menu is not dismissed when links are clicked ([#705](https://github.com/jpanther/congo/pull/705))
 
 ### Removed
 
