@@ -299,4 +299,12 @@ body:has(#menu-controller:checked) {
   @apply underline;
 }
 
+.article-grid:nth-child(even) {
+  @apply pe-0;
+}
+
+.article-grid:nth-child(odd) {
+  @apply ps-0;
+}
+
 @tailwind utilities;

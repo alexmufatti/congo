@@ -1704,6 +1704,14 @@ body:has(#menu-controller:checked) {
   text-decoration-line: underline;
 }
 
+.article-grid:nth-child(even) {
+  padding-inline-end: 0px;
+}
+
+.article-grid:nth-child(odd) {
+  padding-inline-start: 0px;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1902,10 +1910,6 @@ body:has(#menu-controller:checked) {
   margin-right: 0.5rem;
 }
 
-.mr-6 {
-  margin-right: 2.5rem;
-}
-
 .ms-1 {
   margin-inline-start: 0.25rem;
 }
@@ -2024,10 +2028,6 @@ body:has(#menu-controller:checked) {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .w-screen {
@@ -2387,6 +2387,10 @@ body:has(#menu-controller:checked) {
   padding-inline-start: 0.5rem;
 }
 
+.ps-4 {
+  padding-inline-start: 1rem;
+}
+
 .ps-5 {
   padding-inline-start: 1.25rem;
 }
@@ -2430,6 +2434,11 @@ body:has(#menu-controller:checked) {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -2992,10 +3001,6 @@ body:has(#menu-controller:checked) {
     width: 50%;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:w-40 {
     width: 10rem;
   }
@@ -3026,24 +3031,12 @@ body:has(#menu-controller:checked) {
     padding-bottom: 2.5rem;
   }
 
-  .sm\:pe-6 {
-    padding-inline-end: 1.5rem;
+  .sm\:pe-5 {
+    padding-inline-end: 1.25rem;
   }
 
-  .sm\:ps-6 {
-    padding-inline-start: 2.5rem;
-  }
-
-  .ps-4 {
-    padding-inline-start: 1rem;
-  }
-
-  .article-grid:nth-child(even) {
-    padding-inline-end: 0;
-  }
-
-  .article-grid:nth-child(odd) {
-    padding-inline-start: 0;
+  .sm\:ps-5 {
+    padding-inline-start: 1.25rem;
   }
 
   .sm\:pt-10 {
