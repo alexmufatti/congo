@@ -3030,6 +3030,22 @@ body:has(#menu-controller:checked) {
     padding-inline-end: 1.5rem;
   }
 
+  .sm\:ps-6 {
+    padding-inline-start: 2.5rem;
+  }
+
+  .ps-4 {
+    padding-inline-start: 1rem;
+  }
+
+  .article-grid:nth-child(even) {
+    padding-inline-end: 0;
+  }
+
+  .article-grid:nth-child(odd) {
+    padding-inline-start: 0;
+  }
+
   .sm\:pt-10 {
     padding-top: 2.5rem;
   }
