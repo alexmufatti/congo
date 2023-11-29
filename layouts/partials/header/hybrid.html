@@ -8,7 +8,7 @@
       {{/* Hamburger menu */}}
       <label id="menu-button" for="menu-controller" class="block sm:hidden">
         <input type="checkbox" id="menu-controller" class="hidden" />
-        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-500">
           {{ partial "icon.html" "bars" }}
         </div>
         <div
@@ -19,7 +19,7 @@
             class="flex flex-col w-full px-6 py-6 mx-auto overflow-visible list-none max-w-7xl text-end sm:px-14 sm:py-10 sm:pt-10 md:px-24 lg:px-32"
           >
             <li class="mb-1">
-              <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"
+              <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-500"
                 >{{ partial "icon.html" "xmark" }}</span
               >
             </li>
@@ -38,7 +38,7 @@
                       >
                         {{ with .Params.icon | default "search" }}
                           <span
-                            class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                            class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                           >
                             {{- partial "icon.html" . -}}
                           </span>
@@ -58,7 +58,7 @@
                       aria-label="appearance switcher"
                     >
                       <span
-                        class="inline transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:hidden"
+                        class="inline transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:hidden"
                         title="{{ i18n "footer.dark_appearance" }}"
                       >
                         {{ with .Params.icon | default "moon" }}
@@ -72,7 +72,7 @@
                         {{ end }}
                       </span>
                       <span
-                        class="hidden transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:inline"
+                        class="hidden transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:inline"
                         title="{{ i18n "footer.light_appearance" }}"
                       >
                         {{ with .Params.icon | default "sun" }}
@@ -97,7 +97,7 @@
                       {{ with .Params.target }}target="{{ . }}"{{ end }}
                       >{{ with .Params.icon }}
                         <span
-                          class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                          class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                         >
                           {{- partial "icon.html" . -}}
                         </span>
@@ -115,7 +115,7 @@
                 <li class="mb-1 group">
                   <button id="search-button-m0" title="{{ i18n "search.open_button_title" }}">
                     <span
-                      class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                      class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                     >
                       {{ partial "icon.html" "search" }}
                     </span>
@@ -143,7 +143,7 @@
                   >
                     {{ with .Params.icon | default "search" }}
                       <span
-                        class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                        class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                       >
                         {{- partial "icon.html" . -}}
                       </span>
@@ -163,7 +163,7 @@
                   aria-label="appearance switcher"
                 >
                   <span
-                    class="inline transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:hidden"
+                    class="inline transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:hidden"
                     title="{{ i18n "footer.dark_appearance" }}"
                   >
                     {{ with .Params.icon | default "moon" }}
@@ -177,7 +177,7 @@
                     {{ end }}
                   </span>
                   <span
-                    class="hidden transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:inline"
+                    class="hidden transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:inline"
                     title="{{ i18n "footer.light_appearance" }}"
                   >
                     {{ with .Params.icon | default "sun" }}
@@ -201,7 +201,7 @@
                   {{ with .Params.target }}target="{{ . }}"{{ end }}
                   >{{ with .Params.icon }}
                     <span
-                      class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                      class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                     >
                       {{- partial "icon.html" . -}}
                     </span>
@@ -219,7 +219,7 @@
             <li class="mb-1 group sm:mb-0 sm:me-7 sm:last:me-0">
               <button id="search-button-m1" title="{{ i18n "search.open_button_title" }}">
                 <span
-                  class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                  class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                 >
                   {{ partial "icon.html" "search" }}
                 </span>

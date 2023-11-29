@@ -1,5 +1,6 @@
-<article class="mt-6 flex flex-col sm:w-1/2 w-full pe-4 ps-4 sm:pe-5 sm:ps-5 article-grid">
-  <h3 class="ml-2 flex items-center text-2xl font-semibold mb-3">
+<article class="mt-6 flex flex-col sm:w-1/2 w-full pe-4 ps-4 sm:pe-2 sm:ps-2">
+  <div class="p-4 article-grid w-full h-full rounded-lg">
+  <h3 class="flex items-center text-2xl font-semibold mb-3">
     {{ with .Params.externalUrl }}
     <div>
       <a
@@ -66,7 +67,7 @@
       </a>
     </div>
   {{- end }}
-  <div class="ml-2 mr-2 flex-grow flex flex-col mt-1">
+  <div class="mr-2 flex-grow flex flex-col mt-1">
     <div class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
       {{ partial "article-meta.html" . }}
     </div>
@@ -75,7 +76,6 @@
         {{ .Summary | emojify }}
       </div>
     {{ end }}
-    <hr class="border-primary-400 mt-6" />
   </div>
-
+  </div>
 </article>

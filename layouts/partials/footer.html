@@ -17,7 +17,7 @@
                 >
                   {{ with .Params.icon }}
                     <span
-                      class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                      class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                     >
                       {{- partial "icon.html" . -}}
                     </span>
@@ -37,13 +37,13 @@
                 aria-label="appearance switcher"
               >
                 <span
-                  class="inline transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:hidden"
+                  class="inline transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:hidden"
                   title="{{ i18n "footer.dark_appearance" }}"
                 >
                   {{ partial "icon.html" "moon" }}
                 </span>
                 <span
-                  class="hidden transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600 dark:inline"
+                  class="hidden transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600 dark:inline"
                   title="{{ i18n "footer.light_appearance" }}"
                 >
                   {{ partial "icon.html" "sun" }}
@@ -59,7 +59,7 @@
                 {{ with .Params.target }}target="{{ . }}"{{ end }}
                 >{{ with .Params.icon }}
                   <span
-                    class="transition-colors group-dark:hover:text-primary-400 group-hover:text-primary-600"
+                    class="transition-colors group-dark:hover:text-primary-500 group-hover:text-primary-600"
                   >
                     {{- partial "icon.html" . -}}
                   </span>
@@ -113,7 +113,7 @@
         <div
           class="{{ if .Site.Params.footer.showScrollToTop | default true -}}
             me-14
-          {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+          {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-500"
         >
           <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
             <div
