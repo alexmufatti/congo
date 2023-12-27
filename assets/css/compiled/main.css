@@ -1110,25 +1110,25 @@ body:has(#menu-controller:checked) {
   padding-right: 1rem;
 }
 
-:is(:where([dir="rtl"]) .prose ul > li),:is(:where([dir="rtl"])
+:is(:where([dir="rtl"]) .prose ul > li),:is(:where([dir="rtl"]) 
 .prose ol > li) {
   margin-right: 1.75rem;
   padding-left: 0px;
   padding-right: 0.5rem;
 }
 
-:is(:where([dir="rtl"]) .prose ol > li):before,:is(:where([dir="rtl"])
+:is(:where([dir="rtl"]) .prose ol > li):before,:is(:where([dir="rtl"]) 
 .prose ul > li):before {
   left: auto;
   right: 0.25rem;
 }
 
-:is(:where([dir="rtl"]) .prose thead td:first-child),:is(:where([dir="rtl"])
+:is(:where([dir="rtl"]) .prose thead td:first-child),:is(:where([dir="rtl"]) 
 .prose thead th:first-child) {
   padding-right: 0px;
 }
 
-:is(:where([dir="rtl"]) .prose thead td:last-child),:is(:where([dir="rtl"])
+:is(:where([dir="rtl"]) .prose thead td:last-child),:is(:where([dir="rtl"]) 
 .prose thead th:last-child) {
   padding-left: 0px;
 }
@@ -1227,9 +1227,9 @@ body:has(#menu-controller:checked) {
   background-color: rgba(var(--color-primary-100), var(--tw-bg-opacity));
 }
 
-:is(:where(.dark) .copy-button:hover),:is(:where(.dark)
-.copy-button:focus),:is(:where(.dark)
-.copy-button:active),:is(:where(.dark)
+:is(:where(.dark) .copy-button:hover),:is(:where(.dark) 
+.copy-button:focus),:is(:where(.dark) 
+.copy-button:active),:is(:where(.dark) 
 .copy-button:active:hover) {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-primary-600), var(--tw-bg-opacity));
@@ -1313,7 +1313,7 @@ code {
   color: rgba(var(--color-neutral-600), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .lnt),:is(:where(.dark)
+:is(:where(.dark) .chroma .lnt),:is(:where(.dark) 
 .chroma .ln) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-300), var(--tw-text-opacity));
@@ -1376,15 +1376,15 @@ code {
   color: rgba(var(--color-primary-600), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .k),:is(:where(.dark)
-.chroma .kd),:is(:where(.dark)
-.chroma .kn),:is(:where(.dark)
-.chroma .kp),:is(:where(.dark)
-.chroma .kr),:is(:where(.dark)
-.chroma .nc),:is(:where(.dark)
-.chroma .fm),:is(:where(.dark)
-.chroma .nn),:is(:where(.dark)
-.chroma .vc),:is(:where(.dark)
+:is(:where(.dark) .chroma .k),:is(:where(.dark) 
+.chroma .kd),:is(:where(.dark) 
+.chroma .kn),:is(:where(.dark) 
+.chroma .kp),:is(:where(.dark) 
+.chroma .kr),:is(:where(.dark) 
+.chroma .nc),:is(:where(.dark) 
+.chroma .fm),:is(:where(.dark) 
+.chroma .nn),:is(:where(.dark) 
+.chroma .vc),:is(:where(.dark) 
 .chroma .o) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-300), var(--tw-text-opacity));
@@ -1440,16 +1440,16 @@ code {
   color: rgba(var(--color-secondary-400), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .kt),:is(:where(.dark)
-.chroma .nv),:is(:where(.dark)
-.chroma .vi),:is(:where(.dark)
-.chroma .vm),:is(:where(.dark)
-.chroma .m),:is(:where(.dark)
-.chroma .mb),:is(:where(.dark)
-.chroma .mf),:is(:where(.dark)
-.chroma .mh),:is(:where(.dark)
-.chroma .mi),:is(:where(.dark)
-.chroma .il),:is(:where(.dark)
+:is(:where(.dark) .chroma .kt),:is(:where(.dark) 
+.chroma .nv),:is(:where(.dark) 
+.chroma .vi),:is(:where(.dark) 
+.chroma .vm),:is(:where(.dark) 
+.chroma .m),:is(:where(.dark) 
+.chroma .mb),:is(:where(.dark) 
+.chroma .mf),:is(:where(.dark) 
+.chroma .mh),:is(:where(.dark) 
+.chroma .mi),:is(:where(.dark) 
+.chroma .il),:is(:where(.dark) 
 .chroma .mo) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-secondary-600), var(--tw-text-opacity));
@@ -1471,9 +1471,9 @@ code {
   color: rgba(var(--color-secondary-900), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .n),:is(:where(.dark)
-.chroma .nd),:is(:where(.dark)
-.chroma .ni),:is(:where(.dark)
+:is(:where(.dark) .chroma .n),:is(:where(.dark) 
+.chroma .nd),:is(:where(.dark) 
+.chroma .ni),:is(:where(.dark) 
 .chroma .nl) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-secondary-200), var(--tw-text-opacity));
@@ -1501,11 +1501,11 @@ code {
   color: rgba(var(--color-secondary-800), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .na),:is(:where(.dark)
-.chroma .nb),:is(:where(.dark)
-.chroma .bp),:is(:where(.dark)
-.chroma .nx),:is(:where(.dark)
-.chroma .py),:is(:where(.dark)
+:is(:where(.dark) .chroma .na),:is(:where(.dark) 
+.chroma .nb),:is(:where(.dark) 
+.chroma .bp),:is(:where(.dark) 
+.chroma .nx),:is(:where(.dark) 
+.chroma .py),:is(:where(.dark) 
 .chroma .nt) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-secondary-300), var(--tw-text-opacity));
@@ -1525,8 +1525,8 @@ code {
   color: rgba(var(--color-secondary-400), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .no),:is(:where(.dark)
-.chroma .ne),:is(:where(.dark)
+:is(:where(.dark) .chroma .no),:is(:where(.dark) 
+.chroma .ne),:is(:where(.dark) 
 .chroma .vg) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-secondary-500), var(--tw-text-opacity));
@@ -1596,21 +1596,21 @@ code {
   color: rgba(var(--color-primary-800), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .l),:is(:where(.dark)
-.chroma .ld),:is(:where(.dark)
-.chroma .s),:is(:where(.dark)
-.chroma .sa),:is(:where(.dark)
-.chroma .sb),:is(:where(.dark)
-.chroma .sc),:is(:where(.dark)
-.chroma .dl),:is(:where(.dark)
-.chroma .sd),:is(:where(.dark)
-.chroma .s2),:is(:where(.dark)
-.chroma .sh),:is(:where(.dark)
-.chroma .si),:is(:where(.dark)
-.chroma .sx),:is(:where(.dark)
-.chroma .s1),:is(:where(.dark)
-.chroma .gi),:is(:where(.dark)
-.chroma .go),:is(:where(.dark)
+:is(:where(.dark) .chroma .l),:is(:where(.dark) 
+.chroma .ld),:is(:where(.dark) 
+.chroma .s),:is(:where(.dark) 
+.chroma .sa),:is(:where(.dark) 
+.chroma .sb),:is(:where(.dark) 
+.chroma .sc),:is(:where(.dark) 
+.chroma .dl),:is(:where(.dark) 
+.chroma .sd),:is(:where(.dark) 
+.chroma .s2),:is(:where(.dark) 
+.chroma .sh),:is(:where(.dark) 
+.chroma .si),:is(:where(.dark) 
+.chroma .sx),:is(:where(.dark) 
+.chroma .s1),:is(:where(.dark) 
+.chroma .gi),:is(:where(.dark) 
+.chroma .go),:is(:where(.dark) 
 .chroma .gp) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-400), var(--tw-text-opacity));
@@ -1640,7 +1640,7 @@ code {
   color: rgba(var(--color-primary-800), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .sr),:is(:where(.dark)
+:is(:where(.dark) .chroma .sr),:is(:where(.dark) 
 .chroma .ss) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-400), var(--tw-text-opacity));
@@ -1682,11 +1682,11 @@ code {
   color: rgba(var(--color-neutral-500), var(--tw-text-opacity));
 }
 
-:is(:where(.dark) .chroma .c),:is(:where(.dark)
-.chroma .cm),:is(:where(.dark)
-.chroma .c1),:is(:where(.dark)
-.chroma .cs),:is(:where(.dark)
-.chroma .cp),:is(:where(.dark)
+:is(:where(.dark) .chroma .c),:is(:where(.dark) 
+.chroma .cm),:is(:where(.dark) 
+.chroma .c1),:is(:where(.dark) 
+.chroma .cs),:is(:where(.dark) 
+.chroma .cp),:is(:where(.dark) 
 .chroma .cpf) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-400), var(--tw-text-opacity));
@@ -3142,6 +3142,11 @@ code {
 :is(:where(.dark) .dark\:hover\:text-primary-400:hover) {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-400), var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .dark\:hover\:text-primary-500:hover) {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-primary-500), var(--tw-text-opacity));
 }
 
 :is(:where(.dark) .dark\:focus\:bg-primary-900:focus) {
