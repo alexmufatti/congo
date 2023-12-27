@@ -2232,10 +2232,6 @@ code {
   border-width: 1px;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-s {
   border-inline-start-width: 1px;
 }
@@ -2266,11 +2262,6 @@ code {
 .border-primary-400 {
   --tw-border-opacity: 1;
   border-color: rgba(var(--color-primary-400), var(--tw-border-opacity));
-}
-
-.border-primary-500 {
-  --tw-border-opacity: 1;
-  border-color: rgba(var(--color-primary-500), var(--tw-border-opacity));
 }
 
 .bg-neutral {
@@ -2428,10 +2419,6 @@ code {
 
 .ps-2 {
   padding-inline-start: 0.5rem;
-}
-
-.ps-4 {
-  padding-inline-start: 1rem;
 }
 
 .ps-5 {
@@ -2892,12 +2879,8 @@ code {
     padding-bottom: 2.5rem;
   }
 
-  .sm\:pe-2 {
-    padding-inline-end: 0.5rem;
-  }
-
-  .sm\:ps-2 {
-    padding-inline-start: 0.5rem;
+  .sm\:pe-6 {
+    padding-inline-end: 1.5rem;
   }
 
   .sm\:pt-10 {

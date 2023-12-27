@@ -1,8 +1,6 @@
 {{ if .Site.Params.homepage.showRecent | default false }}
-<hr class="border-primary-500 mt-6 border-2 rounded" />
-  <div class="flex flex-wrap">
+  <h2 class="mt-8 text-2xl font-extrabold">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
   {{ range first .Site.Params.homepage.recentLimit (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) .Site.Params.homepage.recentLimit).Pages }}
     {{ partial "article-link.html" . }}
   {{ end }}
-  </div>
 {{ end }}
