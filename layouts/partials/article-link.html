@@ -3,7 +3,7 @@
   {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
   {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
   {{- with $feature }}
-    <div class="flex-none pe-4 sm:pe-6 ">
+    <div class="flex-none pe-4 sm:pe-6 feature">
       <a
         href="{{ with $.Params.externalUrl }}
           {{ . }}
