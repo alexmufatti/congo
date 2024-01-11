@@ -1,4 +1,4 @@
-<article class="prose max-w-full dark:prose-invert">
+<article class="prose max-w-full dark:prose-invert bg-primary-100 py-8 px-4  dark:bg-primary-800">
   {{ with .Title }}
     <header>
       <h1>{{ . | emojify }}</h1>
@@ -6,6 +6,6 @@
   {{ end }}
   <section>{{ .Content | emojify }}</section>
 </article>
-<section>
-  {{ partial "recent-articles.html" . }}
-</section>
+<div class="max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 m-auto">
+{{ partial "recent-articles.html" . }}
+</div>

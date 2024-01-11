@@ -1,9 +1,9 @@
-<article class="mt-6 flex max-w-prose flex-row">
+<article class="mt-6 flex max-w-prose flex-col">
   {{- $images := $.Resources.ByType "image" }}
   {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
   {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
   {{- with $feature }}
-    <div class="flex-none pe-4 sm:pe-6 feature">
+    <div class="flex-none feature">
       <a
         href="{{ with $.Params.externalUrl }}
           {{ . }}
@@ -15,13 +15,10 @@
         <img
           alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
           {{ if eq .MediaType.SubType "svg" }}
-            class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-40
-            sm:max-w-[10rem]" src="{{ .RelPermalink }}"
+            class="w-1" src="{{ .RelPermalink }}"
           {{ else }}
-            class="w-24 rounded-md sm:w-40" srcset="
-            {{- (.Fill "160x120 smart").RelPermalink }}
-            160w, {{- (.Fill "320x240 smart").RelPermalink }} 2x"
-            src="{{ (.Fill "160x120 smart").RelPermalink }}" width="160" height="120"
+            class="rounded-md w-full"
+            src="{{ (.Fill "400x300 smart").RelPermalink }}"
           {{ end }}
           {{ if $.Site.Params.enableImageLazyLoading | default true }}
             loading="lazy"
@@ -74,4 +71,11 @@
       </div>
     {{ end }}
   </div>
+    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+    <div class="flex-grow"></div>
+    <a
+            class="text-right text-primary-500 hover:underline hover:underline-offset-2 dark:text-primary-400 text-sm"
+            href="{{ .RelPermalink }}"
+    >{{ i18n "article.read_more" | emojify }} &rarr;</a>
+    {{ end }}
 </article>
