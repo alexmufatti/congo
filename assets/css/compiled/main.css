@@ -3049,11 +3049,6 @@ code {
   background-color: rgba(var(--color-primary-400), var(--tw-bg-opacity));
 }
 
-:is(:where(.dark) .dark\:bg-primary-700) {
-  --tw-bg-opacity: 1;
-  background-color: rgba(var(--color-primary-700), var(--tw-bg-opacity));
-}
-
 :is(:where(.dark) .dark\:bg-primary-800) {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-primary-800), var(--tw-bg-opacity));
