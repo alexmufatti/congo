@@ -4,76 +4,83 @@
 {{ $scope := default nil }}
 
 {{ if (reflect.IsMap . ) }}
-  {{ $context = .context }}
-  {{ $scope = cond (not .scope) nil .scope }}
+    {{ $context = .context }}
+    {{ $scope = cond (not .scope) nil .scope }}
 {{ end }}
 
 {{ with $context }}
-  {{ $meta := newScratch }}
-  {{/* Gather partials for this context */}}
-  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-    {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-  {{ end }}
-
-  {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
-    {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
-  {{ end }}
-
-  {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
-    {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
-  {{ end }}
-
-  {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
-    {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
-  {{ end }}
-
-  {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
-    {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
-  {{ end }}
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    {{/* Output partials */}}
-    {{ with ($meta.Get "partials") }}
-      {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
+    {{ $meta := newScratch }}
+    {{/* Gather partials for this context */}}
+    {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+        {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
     {{ end }}
 
-    {{/* Output draft label */}}
-    {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
-      <span class="ps-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+    {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
     {{ end }}
-  </div>
-  <div class="mt-1 trainings flex flex-row flex-wrap items-center">
+
+    {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
+        {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+    {{ end }}
+
+    {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+        {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+    {{ end }}
+
+    {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+    {{ end }}
+
+
+    <div class="flex flex-row flex-wrap items-center">
+        {{/* Output partials */}}
+        {{ with ($meta.Get "partials") }}
+            {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
+        {{ end }}
+
+        {{/* Output draft label */}}
+        {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
+            <span class="ps-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+        {{ end }}
+    </div>
+
     {{ $trainingTypes := .Params.trainingTypes }}
     {{ $trainingFeelings := .Params.trainingFeelings }}
-    <span class="fill-neutral-500 me-2">
-          <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"/></svg>
-        </span>
-    {{range $index, $element := $trainingTypes}}
-      <div class="training me-1">
-        <span>{{$element}}</span>
-        <span>{{ index $trainingFeelings $index }}</span>
-      </div>
+    {{ if and $trainingTypes (gt (len $trainingTypes) 1) }}
+        <div class="mt-1 trainings flex flex-row flex-wrap items-center">
+        <span class="fill-neutral-500 me-2">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
+                    d="M320 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM125.7 175.5c9.9-9.9 23.4-15.5 37.5-15.5c1.9 0 3.8 .1 5.6 .3L137.6 254c-9.3 28 1.7 58.8 26.8 74.5l86.2 53.9-25.4 88.8c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l28.7-100.4c5.9-20.6-2.6-42.6-20.7-53.9L238 299l30.9-82.4 5.1 12.3C289 264.7 323.9 288 362.7 288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H362.7c-12.9 0-24.6-7.8-29.5-19.7l-6.3-15c-14.6-35.1-44.1-61.9-80.5-73.1l-48.7-15c-11.1-3.4-22.7-5.2-34.4-5.2c-31 0-60.8 12.3-82.7 34.3L57.4 153.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l23.1-23.1zM91.2 352H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h69.6c19 0 36.2-11.2 43.9-28.5L157 361.6l-9.5-6c-17.5-10.9-30.5-26.8-37.9-44.9L91.2 352z"/></svg>
+      </span>
+
+            {{range $index, $element := $trainingTypes}}
+                <div class="training me-1">
+                    <span>{{$element}}</span>
+                    <span>{{ index $trainingFeelings $index }}</span>
+                </div>
+
+            {{end}}
+        </div>
     {{end}}
 
-  </div>
-  {{/* Output taxonomies */}}
-  {{ if or
+
+    {{/* Output taxonomies */}}
+    {{ if or
     (and (ne $scope "single") (.Params.showTaxonomies | default (.Site.Params.list.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false))))
     (and (eq $scope "single") (.Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false)))
-  }}
-    <div class="my-1 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-      {{ range $taxonomy, $terms := .Site.Taxonomies }}
-        {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-          {{ range $context.GetTerms $taxonomy }}
-            <a
-              href="{{ .RelPermalink }}"
-              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
-              >{{ .LinkTitle }}</a
-            >
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </div>
-  {{ end }}
+    }}
+        <div class="my-1 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+            {{ range $taxonomy, $terms := .Site.Taxonomies }}
+                {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+                    {{ range $context.GetTerms $taxonomy }}
+                        <a
+                                href="{{ .RelPermalink }}"
+                                class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+                        >{{ .LinkTitle }}</a
+                        >
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    {{ end }}
 {{ end }}
