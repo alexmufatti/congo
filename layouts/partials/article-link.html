@@ -28,7 +28,7 @@
     </div>
   {{- end }}
   <div>
-    <h3 class="flex items-center text-2xl font-semibold">
+    <h3 class="flex items-center text-2xl font-semibold mt-2">
       {{ with .Params.externalUrl }}
         <div>
           <a
@@ -62,7 +62,7 @@
         {{ partial "extend-article-link.html" . }}
       {{ end }}
     </h3>
-    <div class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+    <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
