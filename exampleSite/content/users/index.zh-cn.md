@@ -1,8 +1,8 @@
 ---
-title: "Usuarios"
+title: "用户"
 date: 2020-08-14
 draft: false
-description: "Algunos ejemplos reales de Congo."
+description: "Congo的使用用户。"
 slug: "users"
 tags: ["users", "sample"]
 showDate: false
@@ -12,10 +12,10 @@ showEdit: false
 ---
 
 {{< lead >}}
-Sitios web reales que se han creado con Congo.
+使用Congo构建的真实网站
 {{< /lead >}}
 
-La lista a continuación es solo un puñado de sitios web creados con el tema Congo. Échales un vistazo para descubrir algunos excelentes ejemplos de lo que el tema puede hacer.
+下面的列表包含了一些使用Congo主题构建的网站。你可以查看这些网站 ，发现一些展示Congo功能的优秀示例。
 
 | Website                                                                | Details                         |
 | ---------------------------------------------------------------------- | ------------------------------- |
@@ -73,4 +73,4 @@ La lista a continuación es solo un puñado de sitios web creados con el tema Co
 | [robertboscacci.com](https://robertboscacci.com)                       | Personal Site and Blog          |
 | [gorbe.io](https://www.gorbe.io)                                       | Business Site and Blog          |
 
-**¿Usuaria de congo?** Para agregar tu sitio a esta lista, [haz un pull request](https://github.com/jpanther/congo/blob/dev/exampleSite/content/users/index.md).
+**想成为Congo的用户？** 要将您的网站添加到此列表中，请提交[Pull Request](https://github.com/jpanther/congo/blob/dev/exampleSite/content/users/index.md)来添加。
