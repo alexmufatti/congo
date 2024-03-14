@@ -2009,6 +2009,10 @@ code {
   display: none;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -2313,6 +2317,11 @@ code {
 
 .fill-neutral-500 {
   fill: rgba(var(--color-neutral-500), 1);
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .object-scale-down {

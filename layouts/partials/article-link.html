@@ -3,7 +3,7 @@
     {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
     {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
     {{- with $feature }}
-      <div class="flex-none feature">
+      <div class="flex-none feature aspect-square">
         <a href="{{ with $.Params.externalUrl }}
           {{ . }}
         {{ else }}
@@ -46,8 +46,7 @@
               />
               <img
                       alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
-
-                      class="rounded-md w-full"
+                      class="rounded-md w-full h-full object-cover zoom"
                       src="{{ .RelPermalink }}"
                       {{ if lt .Width 660 }}
                         src="{{ .RelPermalink }}"
