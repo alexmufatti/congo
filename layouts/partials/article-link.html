@@ -2,6 +2,7 @@
     {{- $images := $.Resources.ByType "image" }}
     {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
     {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+
     {{- with $feature }}
       <div class="flex-none feature aspect-square overflow-hidden rounded-md ">
         <a href="{{ with $.Params.externalUrl }}
@@ -74,7 +75,11 @@
         </a>
       </div>
     {{- end }}
-  <div>
+  {{ with .Params.aside }}
+    <div class="flex justify-center flex-col flex-grow">
+  {{ else }}
+  <div >
+    {{ end }}
     <h3 class="flex items-center text-2xl font-semibold mt-2">
         {{ with .Params.externalUrl }}
           <div>
@@ -93,12 +98,19 @@
             <span class="ltr:hidden">&#8598;</span>
           </span>
           </div>
+
         {{ else }}
+            {{ with .Params.aside }}
+            <div>
+
+            </div>
+              {{ else }}
           <a
                   class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
                   href="{{ .RelPermalink }}"
           >{{ .Title | emojify }}</a
           >
+            {{ end }}
         {{ end }}
         {{ if and .Draft .Site.Params.article.showDraftLabel }}
           <div class="ms-2">
@@ -118,11 +130,13 @@
         </div>
       {{ end }}
   </div>
-    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+    {{ if and (not .Params.aside) (.Params.showSummary | default (.Site.Params.list.showSummary | default false)) }}
       <div class="flex-grow"></div>
       <a
               class="text-right text-primary-500 hover:underline hover:underline-offset-2 dark:text-primary-400 text-sm"
               href="{{ .RelPermalink }}"
       >{{ i18n "article.read_more" | emojify }} &rarr;</a>
+      {{ else }}
+      <div class="flex-grow"></div>
     {{ end }}
 </article>

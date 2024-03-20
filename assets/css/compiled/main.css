@@ -1835,6 +1835,10 @@ code {
   margin: 0.25rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .m-auto {
   margin: auto;
 }
