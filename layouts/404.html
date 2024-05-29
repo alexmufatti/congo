@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 m-auto">
   <h1 class="mb-3 text-4xl font-extrabold">{{ i18n "error.404_title" | emojify }}</h1>
   <p class="mb-12 mt-8 text-neutral-400 dark:text-neutral-500">
     {{ i18n "error.404_error" | emojify }}
@@ -6,4 +7,5 @@
   <div class="prose dark:prose-invert">
     <p>{{ i18n "error.404_description" | emojify }}</p>
   </div>
+</div>
 {{ end }}
