@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 m-auto">
   <header>
     {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
@@ -12,7 +13,6 @@
       </div>
     </section>
   {{ end }}
-  <section>
     {{ if .Data.Pages }}
       <section>
         {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
@@ -39,5 +39,5 @@
         </p>
       </section>
     {{ end }}
-  </section>
+</div>
 {{ end }}
