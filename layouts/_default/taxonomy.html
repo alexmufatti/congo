@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 m-auto">
-  <header class="px-6 sm:px-14 md:px-24 lg:px-32 m-auto">
+  <header>
     {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
@@ -14,7 +14,7 @@
       </div>
     </section>
   {{ end }}
-  <section class="-mx-2 flex flex-wrap overflow-hidden">
+  <section class="-mx-2 flex flex-wrap overflow-hidden mt-8">
     {{ range .Data.Terms }}
       <article class="my-3 w-full overflow-hidden px-2 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
         <h2 class="flex items-center">
