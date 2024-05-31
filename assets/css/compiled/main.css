@@ -1903,12 +1903,12 @@ code {
   margin-top: -0.75rem;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
+.-mt-4 {
+  margin-top: -1rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .mb-12 {
@@ -1957,6 +1957,10 @@ code {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .ms-1 {
@@ -2047,8 +2051,8 @@ code {
   height: 100vh;
 }
 
-.max-h-\[10rem\] {
-  max-height: 10rem;
+.max-h-\[2rem\] {
+  max-height: 2rem;
 }
 
 .min-h-0 {
@@ -2107,8 +2111,8 @@ code {
   max-width: 80rem;
 }
 
-.max-w-\[10rem\] {
-  max-width: 10rem;
+.max-w-\[2rem\] {
+  max-width: 2rem;
 }
 
 .max-w-full {
@@ -2591,16 +2595,6 @@ code {
 .text-neutral-700 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
-}
-
-.text-neutral-800 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-800), var(--tw-text-opacity));
-}
-
-.text-neutral-900 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-900), var(--tw-text-opacity));
 }
 
 .text-primary-400 {
