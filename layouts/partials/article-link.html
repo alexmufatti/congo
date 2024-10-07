@@ -4,139 +4,109 @@
     {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
 
     {{- with $feature }}
-      <div class="flex-none feature aspect-square overflow-hidden rounded-md ">
-        <a href="{{ with $.Params.externalUrl }}
+        <div class="flex-none feature aspect-square overflow-hidden rounded-md ">
+            <a href="{{ with $.Params.externalUrl }}
           {{ . }}
         {{ else }}
           {{ $.RelPermalink }}
         {{ end }}" aria-label="{{ $.Title | emojify }}"
-        >
-            {{ if eq .MediaType.SubType "svg" }}
-              <img alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}" class="w-1"
-                   src="{{ .RelPermalink }}"
-                      {{ if $.Site.Params.enableImageLazyLoading | default true }}
-                        loading="lazy"
-                      {{ end }}
-              />
-            {{ else }}
-              <source
-                      {{ if lt .Width 660 }}
-                  {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-                    src="{{ .RelPermalink }}"
-                  {{ end }}
-              {{ else }}
-                srcset=" {{- (.Resize "330x webp").RelPermalink }} 330w,
-            {{- (.Resize "660x webp").RelPermalink }} 660w
-            {{ if gt .Width 1024 }}
-              ,{{ (.Resize "1024x webp").RelPermalink }} 1024w
-            {{ else }}
-              {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-                ,{{ .RelPermalink }} {{ .Width }}w
-              {{ end }}
-            {{ end }}
-            {{ if gt .Width 1320 }}
-              ,{{ (.Resize "1320x webp").RelPermalink }} 2x
-            {{ else }}
-              {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-                ,{{ .RelPermalink }} {{ .Width }}w
-              {{ end }}
-            {{ end }}"
-                src="{{ (.Resize "660x webp").RelPermalink }}"
-              {{ end }}
-                      type="image/webp"
-              />
-              <img
-                      alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
-                      class="w-full h-full object-cover zoom"
-                      src="{{ .RelPermalink }}"
-                      {{ if lt .Width 660 }}
-                        src="{{ .RelPermalink }}"
-                      {{ else }}
-                        srcset=" {{- (.Resize "330x").RelPermalink }} 330w,
-          {{- (.Resize "660x").RelPermalink }}
-          660w
-          {{ if gt .Width 1024 }}
-            ,{{ (.Resize "1024x").RelPermalink }} 1024w
-          {{ else }}
-            ,{{ .RelPermalink }} {{ .Width }}w
-          {{ end }}
-          {{ if gt .Width 1320 }}
-            ,{{ (.Resize "1320x").RelPermalink }} 2x
-          {{ else }}
-            ,{{ .RelPermalink }} {{ .Width }}w
-          {{ end }}"
-                        src="{{ (.Resize "660x").RelPermalink }}"
-                      {{ end }}
-                      {{ if $.Site.Params.enableImageLazyLoading | default true }}
-                        loading="lazy" decoding="async"
-                      {{ end }}
-              />
-            {{ end }}
-        </a>
-      </div>
-    {{- end }}
-  {{ with .Params.aside }}
-    <div class="flex justify-center flex-col flex-grow">
-  {{ else }}
-  <div >
-    {{ end }}
-    <h3 class="flex items-center text-2xl font-semibold mt-2">
-        {{ with .Params.externalUrl }}
-          <div>
-            <a
-                    class="text-neutral-700 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="external"
-            >{{ $.Title | emojify }}</a
             >
-            <span
-                    class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500"
-                    title="{{ i18n "list.externalurl_title" }}"
-            >
-            <span class="rtl:hidden">&#8599;</span>
-            <span class="ltr:hidden">&#8598;</span>
-          </span>
-          </div>
-
-        {{ else }}
-            {{ with .Params.aside }}
-            <div>
-
-            </div>
-              {{ else }}
-          <a
-                  class="text-neutral-700 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-                  href="{{ .RelPermalink }}"
-          >{{ .Title | emojify }}</a
-          >
-            {{ end }}
-        {{ end }}
-        {{ if and .Draft .Site.Params.article.showDraftLabel }}
-          <div class="ms-2">
-              {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-          </div>
-        {{ end }}
-        {{ if templates.Exists "partials/extend-article-link.html" }}
-            {{ partial "extend-article-link.html" . }}
-        {{ end }}
-    </h3>
-    <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-        {{ partial "article-meta.html" . }}
-    </div>
-      {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-        <div class="prose py-1 dark:prose-invert">
-            {{ .Summary | emojify }}
+                {{ if eq .MediaType.SubType "svg" }}
+                    <img alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}" class="w-1"
+                         src="{{ .RelPermalink }}"
+                         {{ if $.Site.Params.enableImageLazyLoading | default true }}
+                             loading="lazy"
+                         {{ end }}
+                    />
+                {{ else }}
+                        <img
+                                alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
+                                class="w-full h-full object-cover zoom"
+                                {{ if lt .Width 660 }}
+                                    src="{{ .RelPermalink }}"
+                                {{ else }}
+                                    srcset=" {{- (.Resize "330x").RelPermalink }} 330w, {{- (.Resize "660x").RelPermalink }} 660w
+                                    {{- if gt .Width 1024 -}}
+                                        ,{{ (.Resize "1024x").RelPermalink }} 1024w
+                                        {{- if gt .Width 1320 -}}
+                                            ,{{ (.Resize "1320x").RelPermalink }} 2x
+                                        {{ else }}
+                                            ,{{ .RelPermalink }} {{ .Width }}w
+                                        {{ end }}
+                                    {{ else -}}
+                                      ,{{ .RelPermalink }} {{ .Width }}w
+                                    {{- end }}"
+                                    src="{{ (.Resize "660x").RelPermalink }}"
+                                {{ end }}
+                                {{ if $.Site.Params.enableImageLazyLoading | default true }}
+                                    loading="lazy" decoding="async"
+                                {{ end }}
+                        />
+                {{ end }}
+            </a>
         </div>
-      {{ end }}
-  </div>
-    {{ if and (not .Params.aside) (.Params.showSummary | default (.Site.Params.list.showSummary | default false)) }}
-      <div class="flex-grow"></div>
-      <a
-              class="text-right text-primary-500 hover:underline hover:underline-offset-2 dark:text-primary-400 text-sm"
-              href="{{ .RelPermalink }}"
-      >{{ i18n "article.read_more" | emojify }} &rarr;</a>
-      {{ else }}
-      <div class="flex-grow"></div>
+    {{- end }}
+    <div class="
+    {{- with .Params.aside -}}
+        flex justify-center flex-col flex-grow
+    {{- else -}}
     {{ end }}
+        ">
+            <h3 class="flex items-center text-2xl font-semibold mt-2">
+                {{ with .Params.externalUrl }}
+                    <div>
+                        <a
+                                class="text-neutral-700 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                                href="{{ . }}"
+                                target="_blank"
+                                rel="external"
+                        >{{ $.Title | emojify }}</a>
+                        <span
+                                class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500"
+                                title="{{ i18n "list.externalurl_title" }}"
+                        >
+                            <span class="rtl:hidden">&#8599;</span>
+                            <span class="ltr:hidden">&#8598;</span>
+                        </span>
+                    </div>
+
+                {{ else }}
+                    {{ with .Params.aside }}
+                        <div>
+
+                        </div>
+                    {{ else }}
+                        <a
+                                class="text-neutral-700 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                                href="{{ .RelPermalink }}"
+                        >{{ .Title | emojify }}</a>
+                    {{ end }}
+                {{ end }}
+                {{ if and .Draft .Site.Params.article.showDraftLabel }}
+                    <div class="ms-2">
+                        {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+                    </div>
+                {{ end }}
+                {{ if templates.Exists "partials/extend-article-link.html" }}
+                    {{ partial "extend-article-link.html" . }}
+                {{ end }}
+            </h3>
+            <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                {{ partial "article-meta.html" . }}
+            </div>
+            {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+                <div class="prose py-1 dark:prose-invert">
+                    {{ .Summary | emojify }}
+                </div>
+            {{ end }}
+        </div>
+        {{ if and (not .Params.aside) (.Params.showSummary | default (.Site.Params.list.showSummary | default false)) }}
+            <div class="flex-grow"></div>
+            <a
+                    class="text-right text-primary-500 hover:underline hover:underline-offset-2 dark:text-primary-400 text-sm"
+                    href="{{ .RelPermalink }}"
+            >{{ i18n "article.read_more" | emojify }} &rarr;</a>
+        {{ else }}
+            <div class="flex-grow"></div>
+        {{ end }}
 </article>
