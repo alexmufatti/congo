@@ -15,9 +15,13 @@
     {{- if isset . "region" }}
       {{- $region = .region }}
     {{- end }}
+    {{- $url := "https://{{ $region }}.umami.is" }}
+    {{- if isset . "url" }}
+      {{- $url = .url }}
+    {{- end }}
     <script
       defer
-      src="https://{{ $region }}.umami.is/script.js"
+      src="{{ $url }}/script.js"
       data-website-id="{{ .site }}"
     ></script>
   {{ end }}
