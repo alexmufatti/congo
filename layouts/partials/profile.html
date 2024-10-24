@@ -6,15 +6,15 @@
   {{ with site.Language.Params.Author.image }}
     {{ $authorImage := resources.Get . }}
     {{ if $authorImage }}
-      {{ $imgClass := "mb-2 h-auto w-36 rounded-full hover:border hover:border-neutral-200" }}
+      {{ $imgClass := "h-auto w-36 rounded-full hover:border hover:border-neutral-200" }}
       {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy) }}
     {{ end }}
   {{ end }}
-  <h1 class="text-5xl font-extrabold text-neutral-100">
+  <h1 class="text-5xl pt-2 font-extrabold text-neutral-100">
     {{ site.Language.Params.Author.name | default site.Title }}
   </h1>
   {{ with site.Language.Params.Author.headline }}
-    <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+    <h2 class="text-xl text-neutral-500 dark:text-neutral-300">
       {{ . | markdownify | emojify }}
     </h2>
   {{ end }}
