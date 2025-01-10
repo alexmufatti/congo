@@ -2338,7 +2338,7 @@ code {
 
 .bg-primary-900 {
   --tw-bg-opacity: 1;
-  background-color: rgba(var(--color-primary-900), var(--tw-bg-opacity));
+  background-color: rgba(var(--color-primary-900), var(--tw-bg-opacity, 1));
 }
 
 .bg-transparent {
@@ -2600,7 +2600,7 @@ code {
 
 .text-neutral-100 {
   --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-100), var(--tw-text-opacity));
+  color: rgba(var(--color-neutral-100), var(--tw-text-opacity, 1));
 }
 
 .text-neutral-400 {
@@ -2616,16 +2616,6 @@ code {
 .text-neutral-700 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-700), var(--tw-text-opacity, 1));
-}
-
-.text-neutral-800 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-800), var(--tw-text-opacity, 1));
-}
-
-.text-neutral-900 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-900), var(--tw-text-opacity, 1));
 }
 
 .text-primary-400 {
@@ -2756,7 +2746,7 @@ code {
 
 .hover\:border-neutral-200:hover {
   --tw-border-opacity: 1;
-  border-color: rgba(var(--color-neutral-200), var(--tw-border-opacity));
+  border-color: rgba(var(--color-neutral-200), var(--tw-border-opacity, 1));
 }
 
 .hover\:border-primary-300:hover {
@@ -2791,7 +2781,7 @@ code {
 
 .hover\:text-neutral-100:hover {
   --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-100), var(--tw-text-opacity));
+  color: rgba(var(--color-neutral-100), var(--tw-text-opacity, 1));
 }
 
 .hover\:text-primary-500:hover {
@@ -2948,7 +2938,7 @@ code {
 
 .dark\:bg-primary-500:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgba(var(--color-primary-500), var(--tw-bg-opacity));
+  background-color: rgba(var(--color-primary-500), var(--tw-bg-opacity, 1));
 }
 
 .dark\:bg-primary-800:is(.dark *) {
@@ -3018,7 +3008,7 @@ code {
 
 .dark\:hover\:text-neutral-100:hover:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-100), var(--tw-text-opacity));
+  color: rgba(var(--color-neutral-100), var(--tw-text-opacity, 1));
 }
 
 .dark\:hover\:text-neutral-800:hover:is(.dark *) {
