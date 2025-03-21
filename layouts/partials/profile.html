@@ -3,7 +3,7 @@
 >
   {{ $lazy := site.Params.enableImageLazyLoading | default true }}
   {{ $altText := (site.Language.Params.Author.name | default "Author") }}
-  {{ with site.Language.Params.Author.image }}
+  {{ with site.Params.header.logo }}
     {{ $authorImage := resources.Get . }}
     {{ if $authorImage }}
       {{ $imgClass := "h-auto w-36 rounded-full hover:border hover:border-neutral-200" }}
